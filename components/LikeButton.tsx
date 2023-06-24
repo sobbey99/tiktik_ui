@@ -10,7 +10,17 @@ interface IProps {
 
 const LikeButton = ({ likes, handleLike, handleDislike }: IProps) => {
   const [alreadyLiked, setAlreadyLiked] = useState(false);
-  const { userProfile } = useAuthStore();
+  const { userProfile }: any = useAuthStore();
+
+  const filterLikes = likes?.filter((like) => like._ref === userProfile?._id);
+
+  useEffect(() => {
+    if (filterLikes?.length > 0) {
+      setAlreadyLiked(true);
+    } else {
+      setAlreadyLiked(false);
+    }
+  }, [likes, filterLikes]);
 
   return (
     <div className="gap-6">
