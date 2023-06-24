@@ -84,12 +84,12 @@ const Upload = () => {
             ) : (
               <div>
                 {videoAsset ? (
-                  <div>
+                  <div className="w-[250px]">
                     <video
                       src={videoAsset.url}
                       loop
                       controls
-                      className="rounded-xl h-[450px] mt-16 bg-black"
+                      className="rounded-xl h-[450px] mt-1 bg-black w-full"
                     ></video>
                   </div>
                 ) : (
@@ -153,7 +153,7 @@ const Upload = () => {
           </select>
           <div className="flex gap-6 mt-10">
             <button
-              onClick={() => {}}
+              onClick={() => router.back()}
               type="button"
               className="border-gray-300 border-2 text-md font-medium p-2 rounded w-28 lg:w-44 outline-none"
             >
