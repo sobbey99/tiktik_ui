@@ -164,7 +164,7 @@ const Upload = () => {
               type="button"
               className="bg-[#F51997] text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none"
             >
-              Post
+              {savingPost ? "Posting..." : "Post"}
             </button>
           </div>
         </div>
